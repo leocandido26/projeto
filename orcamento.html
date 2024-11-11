@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <title>Orçamentos</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li> <a href="index.html"> Página inicial </a></li>                
+                <li> <a href="contact.html"> Contatos </a></li>
+                <li> <a href="servicos.html"> Serviços </a></li>
+                <li> <a href="orcamento.html"> Orçamentos </a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class ='Principal'>
+        <h1> Orçamento </h1>
+        <h2> Calculadora dos Serviços </h2>
+        <h3> Inserir a Quantidade de Serviços solicitados </h3>
+        <section class = 'calculadora'>
+            <form>
+                <input type="number" id="valorInput" placeholder="Digite um número inteiro">
+                <br><br>
+                <button id='calcularValor'> Calcular </button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Técnicos TI, Todos os direitos reservados </p>
+    </footer>
+    <script>
+        let valorInput = document.getElementById('valorInput');
+        let botaoCalcular = document.getElementById('calcularValor');
+        function calcular() {
+            let valor = parseFloat(valorInput.value);
+            let resultado = valor * 145.50;
+            alert('O valor total da quantidade de serviços solicitados é: ' + resultado);
+        }
+        botaoCalcular.addEventListener('click', calcular);
+    </script>
+</body>
+</html>

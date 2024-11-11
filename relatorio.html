@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Usuários</title>
+</head>
+<body>
+    <h1> relatório de usuários </h1>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+        import { getFirestore, collection, doc, getDocs } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyCZEXoVoFaLIREYbZDJQwwHVurK6uE7uoU",
+          authDomain: "bd-recordar-47599.firebaseapp.com",
+          projectId: "bd-recordar-47599",
+          storageBucket: "bd-recordar-47599.appspot.com",
+          messagingSenderId: "789736783207",
+          appId: "1:789736783207:web:876b27bd1dbbf93eee43c2",
+          measurementId: "G-N1G70DYC05"
+        };
+      
+        // Inicialiazar o Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        //Conectar ao Firestore
+        const db = getFirestore(app);
+
+        //Exibir as coleções do Firestore no Console
+        const querySnapshot = await getDocs(collection(db, "contatos"));
+        querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+        });
+
+      </script>
+</body>
+</html>
